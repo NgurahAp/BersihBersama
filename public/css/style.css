@@ -1,0 +1,7 @@
+.background-img {
+    background-image: url('/images/welcome.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+
