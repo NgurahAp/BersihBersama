@@ -186,59 +186,164 @@
         </div>
     </div>
 
-    <div class=" h-[80vh] py-14 px-16">
-        <div>
-            <h1 class="text-black text-5xl font-bold ">Selamat datang di Gerakan BersihBersama!</h1>
-            <h1 class="text-black text-2xl font-normal pb-10">Kami hadir untuk mengajak dan memotivasi masyarakat untuk
-                berpartisipasi dalam menjaga kebersihan
-                lingkungan sekitar kita.</h1>
-            <div>
-                <div class="flex items-center justify-center" data-aos="zoom-out" data-aos-duration="1000">
-                    <div
-                        class="w-full bg-white border m-5 border-white rounded-xl dark:bg-gray-800 dark:border-gray-700">
-                        <div
-                            class="w-12 h-12 p-2 border-2 bg-slate-200 border-green-600 rounded-full flex items-center justify-center">
-                            <svg class="w-8 h-8 text-green-600 mb-2" xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 53 53" id="announcement">
-                                <path fill="currentColor"
-                                    d="M7.47 44.6a1 1 0 0 0 1 .84h3.36a1 1 0 0 0 .76-.36 1 1 0 0 0 .23-.8l-2.09-12.72H11.95c15.2 1.39 21.82 10.3 21.88 10.38a1 1 0 0 0 .82.42.79.79 0 0 0 .3-.05 1 1 0 0 0 .7-.95V30.21h2.09a1 1 0 0 0 1-1V22a1 1 0 0 0-1-1h-2.09V9.91A1 1 0 0 0 35 9a1 1 0 0 0-1.12.35c-.07.1-7.33 9.6-22.06 10.43h-6.2a3.12 3.12 0 0 0-3.12 3.08v5.58a3.11 3.11 0 0 0 2.84 3.09zm3.18-1.16H9.31L7.37 31.56h1.34zM36.74 23v5.17h-1.09V23zm-3.09-10.49v26.21c-2.94-2.88-9.56-7.91-20.83-9.11v-7.94a33.34 33.34 0 0 0 20.83-9.16zM4.5 28.44v-5.58a1.12 1.12 0 0 1 1.12-1.12h5.2v7.82h-5.2a1.12 1.12 0 0 1-1.12-1.12zm37.1-8.86a1 1 0 0 0 .91.58 1.06 1.06 0 0 0 .42-.09L49 17.33a1 1 0 0 0 .5-1.33 1 1 0 0 0-1.32-.49l-6.08 2.74a1 1 0 0 0-.5 1.33zM44 7.89l-4.5 4.91a1 1 0 0 0 .73 1.68 1 1 0 0 0 .74-.32l4.5-4.92A1 1 0 0 0 44 7.89zm5 24.51-6.07-2.75a1 1 0 1 0-.83 1.82l6.08 2.75a1 1 0 0 0 .41.09A1 1 0 0 0 49 32.4zm-9.47 4.52L44 41.84a1 1 0 0 0 .74.32 1 1 0 0 0 .67-.26 1 1 0 0 0 .06-1.41L41 35.57a1 1 0 1 0-1.47 1.35zm9.97-13.06h-6.32a1 1 0 1 0 0 2h6.32a1 1 0 0 0 0-2z">
-                                </path>
-                            </svg>
-                        </div>
+    {{-- Event --}}
 
-                        <a href="#">
-                            <h5 class="mb-2 text-2xl font-bold tracking-tight pt-4 text-gray-900 dark:text-white">
-                                Pengaduan
-                            </h5>
-                        </a>
-                        <p class="mb-3 font-normal text-xl text-gray-700 dark:text-gray-400">
-                            Laporkan area atau lokasi yang perlu diperhatikan kebersihannya. Ambil foto dan berikan
-                            keterangan detail agar tim kebersihan dapat segera menanggapi laporan Anda.
-                        </p>
-                    </div>
-                    <div
-                        class="w-full bg-white border m-5 border-white rounded-xl dark:bg-gray-800 dark:border-gray-700">
+    <div class="h-[90vh] py-14 px-16">
+        <div class="flex flex-col h-full">
+            <div class="items-center justify-center">
+                <h1 class="text-black text-5xl font-bold text-center pb-2">Aksi</h1>
+                <h1 class="text-black text-2xl font-light pb-8 text-center">Gabung dan eksplor lebih jauh lagi tentang
+                    kegiatan
+                    BersihBersama kami!</h1>
+                <div>
+                    <div class="flex items-center justify-center flex-wrap" data-aos="zoom-out"
+                        data-aos-duration="1000">
                         <div
-                            class="w-12 h-12 p-2 border-2 bg-slate-200 border-green-600 rounded-full flex items-center justify-center">
-                            <svg class="w-8 h-8 text-green-600 mb-2" xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 512 512" id="information">
-                                <path fill="currentColor"
-                                    d="M288 448V192h-96v16h32v240h-32v16h128v-16zM255.8 144.5c26.6 0 48.2-21.6 48.2-48.2s-21.6-48.2-48.2-48.2-48.2 21.6-48.2 48.2 21.6 48.2 48.2 48.2z">
-                                </path>
-                            </svg>
-                        </div>
+                            class="flex flex-col w-2/5 m-5 items-center bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+                            <img class="object-cover w-full h-80 rounded-t-lg md:rounded-none md:rounded-b-lg"
+                                src="images/welcome3.jpg" alt="">
+                            <div class="flex flex-col justify-between p-4 leading-normal w-full">
+                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                                    Judul
+                                </h5>
+                                <p class=" font-bold text-gray-700 dark:text-gray-400">
+                                    Alamat
+                                </p>
+                                <p class=" font-normal text-gray-700 dark:text-gray-400">
+                                    Deskripsi
+                                </p>
+                                <a href="your-link-here"
+                                    class="font-normal text-green-500 dark:text-gray-400 hover:underline">
+                                    Lihat detail
+                                </a>
 
-                        <a href="#">
-                            <h5 class="mb-2 text-2xl font-bold tracking-tight pt-4 text-gray-900 dark:text-white">
-                                Informasi
-                            </h5>
-                        </a>
-                        <p class="mb-3 font-normal text-xl text-gray-700 dark:text-gray-400">
-                            Temukan informasi terbaru tentang kegiatan yang berlangsung di komunitas ini, seperti event
-                            membersihkan lingkungan atau pemberian edukasi tentang pentingnya menjaga kebersihan.
-                        </p>
+                            </div>
+                        </div>
+                        <div
+                            class="flex flex-col w-2/5 m-5 items-center bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+                            <img class="object-cover w-full h-80 rounded-t-lg md:rounded-none md:rounded-b-lg"
+                                src="images/welcome.jpg" alt="">
+                            <div class="flex flex-col justify-between p-4 leading-normal w-full">
+                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                                    Judul
+                                </h5>
+                                <p class=" font-bold text-gray-700 dark:text-gray-400">
+                                    Alamat
+                                </p>
+                                <p class=" font-normal text-gray-700 dark:text-gray-400">
+                                    Deskripsi
+                                </p>
+                                <a href="your-link-here"
+                                    class="font-normal text-green-500 dark:text-gray-400 hover:underline">
+                                    Lihat detail
+                                </a>
+
+                            </div>
+                        </div>
                     </div>
                 </div>
+            </div>
+            <div class="flex items-center justify-center mt-auto">
+                <a href="https://forms.gle/KwDTPWR9pQYnebBm7"
+                    class="align-middle select-none font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-sm md:text-m py-4 px-8 bg-green-400 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none rounded-full"
+                    target="_blank">
+                    Kegiatan Lainnya ->
+                </a>
+            </div>
+        </div>
+    </div>
+
+    {{-- blog --}}
+
+    <div class="h-[60vh] py-14 px-16">
+        <div class="flex flex-col h-full">
+            <div class="items-center justify-center">
+                <h1 class="text-black text-5xl pb-2 font-bold text-center">Blog</h1>
+                <h1 class="text-black text-2xl font-light pb-8 text-center">Temukan beragam informasi dan tips menarik
+                    seputar menjaga lingkungan dan kegiatan BersihBersama.!</h1>
+                <div>
+                    <div class="flex items-center justify-center flex-wrap" data-aos="zoom-out"
+                        data-aos-duration="1000">
+                        <div
+                            class="relative flex flex-col w-2/5 m-5 p-5 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                            <div class="absolute top-2 left-5  flex items-center space-x-1">
+                                <svg class="w-5 h-5 text-green-400 dark:text-gray-400"
+                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4 6h16M4 12h8m-8 6h16" />
+                                </svg>
+                                <span class="text-sm font-medium text-green-400 dark:text-gray-400">Article</span>
+                            </div>
+                            <div class="absolute top-2 right-3">
+                                <span class="text-sm text-gray-500 dark:text-gray-400">July 24, 2024</span>
+                            </div>
+                            <a href="#">
+                                <h5 class="mb-2 pt-5 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                                    Noteworthy technology acquisitions 2021
+                                </h5>
+                            </a>
+                            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                                Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse
+                                chronological order.
+                            </p>
+                            <div class="flex justify-between">
+                                <div class="flex items-center">
+                                    <img src="https://via.placeholder.com/40" alt="Profile Image"
+                                        class="w-10 h-10 rounded-full mr-2">
+                                    <h1 class="text-lg font-medium text-gray-900 dark:text-white">Admin</h1>
+                                </div>
+                                <a href="your-link-here"
+                                    class="font-normal text-green-500 dark:text-gray-400 hover:underline">
+                                    Selengkapnya ->
+                                </a>
+                            </div>
+                        </div>
+                        <div
+                            class="relative flex flex-col w-2/5 m-5 p-5 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                            <div class="absolute top-2 left-5  flex items-center space-x-1">
+                                <svg class="w-5 h-5 text-green-400 dark:text-gray-400"
+                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4 6h16M4 12h8m-8 6h16" />
+                                </svg>
+                                <span class="text-sm font-medium text-green-400 dark:text-gray-400">Article</span>
+                            </div>
+                            <div class="absolute top-2 right-3">
+                                <span class="text-sm text-gray-500 dark:text-gray-400">July 24, 2024</span>
+                            </div>
+                            <a href="#">
+                                <h5 class="mb-2 pt-5 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                                    Noteworthy technology acquisitions 2021
+                                </h5>
+                            </a>
+                            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                                Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse
+                                chronological order.
+                            </p>
+                            <div class="flex justify-between">
+                                <div class="flex items-center">
+                                    <img src="https://via.placeholder.com/40" alt="Profile Image"
+                                        class="w-10 h-10 rounded-full mr-2">
+                                    <h1 class="text-lg font-medium text-gray-900 dark:text-white">Admin</h1>
+                                </div>
+                                <a href="your-link-here"
+                                    class="font-normal text-green-500 dark:text-gray-400 hover:underline">
+                                    Selengkapnya ->
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="flex items-center justify-center mt-auto">
+                <a href="https://forms.gle/KwDTPWR9pQYnebBm7"
+                    class="align-middle select-none font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-sm md:text-m py-4 px-8 bg-green-400 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none rounded-full"
+                    target="_blank">
+                    Artikel Lainnya ->
+                </a>
             </div>
         </div>
     </div>
