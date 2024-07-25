@@ -1,29 +1,30 @@
 <!doctype html>
-<html>
-
+<html class="scroll-smooth">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     @yield('styles')
 </head>
 
 <body style=" font-family: 'Inter', sans-serif;">
-    <header class="flex  h-screen items-center"
+
+    <header id="home" class="flex  h-screen items-center"
         style="background-image: url('{{ asset('images/welcome3.jpg') }}'); background-size: cover; background-position: center; height: 80vh">
         <nav
             class="bg-white  dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
             <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
                 <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
-                    <span class="self-center text-2xl font-semibold dark:text-white">Flowbite</span>
+                    <span class="self-center text-green-500 text-2xl font-semibold dark:text-white">BersihBersama</span>
                 </a>
                 <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
                     <a href="{{ route('login') }}"
-                        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                        class="text-black  hover:bg-green-400 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                         Login
                     </a>
                     <button data-collapse-toggle="navbar-sticky" type="button"
@@ -41,21 +42,20 @@
                     <ul
                         class="flex flex-col p-4 md:p-0 mt-4 font-medium rounded-lg bg-white bg-opacity-80 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 dark:bg-gray-800 md:dark:bg-gray-900">
                         <li>
-                            <a href="#"
-                                class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500"
-                                aria-current="page">Home</a>
+                            <a href="#home"
+                                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-green-500 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Home</a>
                         </li>
                         <li>
-                            <a href="#"
-                                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">About</a>
+                            <a href="#about"
+                                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-green-500 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">About</a>
                         </li>
                         <li>
-                            <a href="#"
-                                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Services</a>
+                            <a href="#event"
+                                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-green-500 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Kegiatan</a>
                         </li>
                         <li>
-                            <a href="#"
-                                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact</a>
+                            <a href="#blog"
+                                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-green-500 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Blog</a>
                         </li>
                     </ul>
                 </div>
@@ -81,14 +81,14 @@
 
     {{-- About Us --}}
 
-    <div class=" h-[80vh] py-14 px-16">
+    <div id="about" class=" h-[80vh] py-14 px-16">
         <div>
             <h1 class="text-black text-5xl font-bold ">Selamat datang di Gerakan BersihBersama!</h1>
             <h1 class="text-black text-2xl font-normal pb-10">Kami hadir untuk mengajak dan memotivasi masyarakat untuk
                 berpartisipasi dalam menjaga kebersihan
                 lingkungan sekitar kita.</h1>
             <div>
-                <div class="flex items-center justify-center" data-aos="zoom-out" data-aos-duration="1000">
+                <div class="flex items-center justify-center" data-aos="zoom-out" data-aos-duration="100">
                     <div
                         class="w-full bg-white border m-5 border-white rounded-xl dark:bg-gray-800 dark:border-gray-700">
                         <div
@@ -188,7 +188,7 @@
 
     {{-- Event --}}
 
-    <div class="h-[90vh] py-14 px-16">
+    <div id="event" class="h-[90vh] py-14 px-16">
         <div class="flex flex-col h-full">
             <div class="items-center justify-center">
                 <h1 class="text-black text-5xl font-bold text-center pb-2">Aksi</h1>
@@ -212,7 +212,7 @@
                                 <p class=" font-normal text-gray-700 dark:text-gray-400">
                                     Deskripsi
                                 </p>
-                                <a href="your-link-here"
+                                <a href="{{ route('login') }}"
                                     class="font-normal text-green-500 dark:text-gray-400 hover:underline">
                                     Lihat detail
                                 </a>
@@ -233,7 +233,7 @@
                                 <p class=" font-normal text-gray-700 dark:text-gray-400">
                                     Deskripsi
                                 </p>
-                                <a href="your-link-here"
+                                <a href="{{ route('login') }}"
                                     class="font-normal text-green-500 dark:text-gray-400 hover:underline">
                                     Lihat detail
                                 </a>
@@ -244,9 +244,8 @@
                 </div>
             </div>
             <div class="flex items-center justify-center mt-auto">
-                <a href="https://forms.gle/KwDTPWR9pQYnebBm7"
-                    class="align-middle select-none font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-sm md:text-m py-4 px-8 bg-green-400 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none rounded-full"
-                    target="_blank">
+                <a href="{{ route('login') }}"
+                    class="align-middle select-none font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-sm md:text-m py-4 px-8 bg-green-400 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none rounded-full">
                     Kegiatan Lainnya ->
                 </a>
             </div>
@@ -255,7 +254,7 @@
 
     {{-- blog --}}
 
-    <div class="h-[60vh] py-14 px-16">
+    <div id="blog" class="h-[60vh] py-14 px-16">
         <div class="flex flex-col h-full">
             <div class="items-center justify-center">
                 <h1 class="text-black text-5xl pb-2 font-bold text-center">Blog</h1>
@@ -278,7 +277,7 @@
                             <div class="absolute top-2 right-3">
                                 <span class="text-sm text-gray-500 dark:text-gray-400">July 24, 2024</span>
                             </div>
-                            <a href="#">
+                            <a href="{{ route('login') }}">
                                 <h5 class="mb-2 pt-5 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                                     Noteworthy technology acquisitions 2021
                                 </h5>
@@ -293,7 +292,7 @@
                                         class="w-10 h-10 rounded-full mr-2">
                                     <h1 class="text-lg font-medium text-gray-900 dark:text-white">Admin</h1>
                                 </div>
-                                <a href="your-link-here"
+                                <a href="{{ route('login') }}"
                                     class="font-normal text-green-500 dark:text-gray-400 hover:underline">
                                     Selengkapnya ->
                                 </a>
@@ -313,7 +312,7 @@
                             <div class="absolute top-2 right-3">
                                 <span class="text-sm text-gray-500 dark:text-gray-400">July 24, 2024</span>
                             </div>
-                            <a href="#">
+                            <a href="{{ route('login') }}">
                                 <h5 class="mb-2 pt-5 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                                     Noteworthy technology acquisitions 2021
                                 </h5>
@@ -328,7 +327,7 @@
                                         class="w-10 h-10 rounded-full mr-2">
                                     <h1 class="text-lg font-medium text-gray-900 dark:text-white">Admin</h1>
                                 </div>
-                                <a href="your-link-here"
+                                <a href="{{ route('login') }}"
                                     class="font-normal text-green-500 dark:text-gray-400 hover:underline">
                                     Selengkapnya ->
                                 </a>
@@ -339,14 +338,56 @@
                 </div>
             </div>
             <div class="flex items-center justify-center mt-auto">
-                <a href="https://forms.gle/KwDTPWR9pQYnebBm7"
-                    class="align-middle select-none font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-sm md:text-m py-4 px-8 bg-green-400 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none rounded-full"
-                    target="_blank">
+                <a href="{{ route('login') }}"
+                    class="align-middle select-none font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-sm md:text-m py-4 px-8 bg-green-400 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none rounded-full">
                     Artikel Lainnya ->
                 </a>
             </div>
         </div>
     </div>
+
+    <footer class="bg-gray-800 text-white py-10">
+        <div class="container mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-4 gap-8">
+            <!-- Column 1: Logo -->
+            <div>
+                <h2 class="text-2xl font-bold mb-4">BersihBersama</h2>
+                <h2 class="pt-20 font-thin">© 2023 BersihBersama. All Rights Reserved.</h2>
+            </div>
+            <!-- Column 2: Sumber Daya -->
+            <div>
+                <h2 class="text-lg font-bold mb-4">Sumber Daya</h2>
+                <ul>
+                    <li class="mb-2"><a href="#" class="hover:underline">UBSI</a></li>
+                    <li class="mb-2"><a href="#" class="hover:underline">Sistem Informasi</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3: Sosial Media -->
+            <div>
+                <h2 class="text-lg font-bold mb-4">Sosial Media</h2>
+                <ul>
+                    <li class="mb-2"><a href="#" class="hover:underline">Twitter</a></li>
+                    <li class="mb-2"><a href="#" class="hover:underline">Instagram</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 4: Privacy -->
+            <div>
+                <h2 class="text-lg font-bold mb-4">Privacy</h2>
+                <ul>
+                    <li class="mb-2"><a href="#" class="hover:underline">Kebijakan Privasi</a></li>
+                    <li class="mb-2"><a href="#" class="hover:underline">Syarat & Ketentuan</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://kit.fontawesome.com/ba315d3bcc.js" crossorigin="anonymous" defer></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
 </body>
 
 </html>
