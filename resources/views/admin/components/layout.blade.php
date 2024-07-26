@@ -12,7 +12,7 @@
     @yield('styles')
 </head>
 
-<body>
+<body style=" font-family: 'Inter', sans-serif;">
     <div class="min-h-screen flex flex-col">
         <header class="bg-blue-500 text-white p-4 flex justify-between">
             <h1 class="text-2xl">Dashboard</h1>
