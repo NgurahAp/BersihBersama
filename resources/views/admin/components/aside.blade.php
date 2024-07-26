@@ -1,7 +1,7 @@
 <aside class="bg-gray-800 text-white w-64 p-4">
     <nav>
         <ul>
-            <li class="mb-4"><a href="" class="hover:underline">Manage Users</a></li>
+            <li class="mb-4"><a href="{{ route('event.add') }}" class="hover:underline">Tambah Event</a></li>
             <li class="mb-4"><a href="" class="hover:underline">Manage Events</a></li>
             <li class="mb-4"><a href="" class="hover:underline">Manage Complaints</a></li>
             <li class="mb-4"><a href="" class="hover:underline">Manage Blogs</a></li>
