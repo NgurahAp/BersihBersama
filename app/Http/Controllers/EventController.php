@@ -15,13 +15,13 @@ class EventController extends Controller
     public function saveEvent(Request $request)
     {
         $request->validate([
-            'judul' => 'required|integer',
-            'deskripsi' => 'required|string|max:255',
+            'judul' => 'required|string|max:255',
+            'deskripsi' => 'required|string|max:500',
             'alamat' => 'required|string|max:255',
-            'kota' => 'required|string|max:10',
-            'gmaps' => 'required|string|max:255',
+            'kota' => 'required|string|max:15',
+            'gmaps' => 'required|string|max:500',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
-            'wagrup' => 'required|string|max:255',
+            'wagrup' => 'required|string|max:500',
         ]);
 
         $imageName = null;
@@ -40,6 +40,6 @@ class EventController extends Controller
         $event->wagrup = $request->wagrup;
         $event->save();
 
-        return redirect()->route('admin.dashboard')->with('success', 'event berhasil ditambahkan');
+        return redirect()->route('admin.dashboard')->with('success', 'Event berhasil ditambahkan');
     }
 }

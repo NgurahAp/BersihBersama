@@ -4,6 +4,16 @@
     <section class="bg-white dark:bg-gray-900">
         <div class="py-8 px-4 mx-auto max-w-2xl lg:py-16">
             <h2 class="mb-4 text-xl font-bold text-gray-900 dark:text-white">Add a new product</h2>
+            {{-- Jika ada error akan menampilkan errornyaiyaa --}}
+            @if ($errors->any())
+                <div class="bg-red-500 text-white p-4 mb-4">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
             <form action="{{ route('event.save') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
@@ -17,7 +27,7 @@
                     <div class="sm:col-span-2">
                         <label for="deskripsi"
                             class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">deskripsi</label>
-                        <textarea id="deskripsi" rows="8"
+                        <textarea id="deskripsi" name="deskripsi" rows="8"
                             class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                             placeholder="Your deskripsi here"></textarea>
                     </div>

@@ -14,17 +14,15 @@ return new class extends Migration
         Schema::create('events', function (Blueprint $table) {
             $table->id();
             $table->string('judul');
-            $table->string('deskripsi');
+            $table->text('deskripsi');
             $table->string('alamat');
             $table->string('kota');
             $table->string('gmaps');
-            $table->string('image');
+            $table->string('image')->nullable();
             $table->string('wagrup');
             $table->timestamps();
         });
     }
-
-    
 
     /**
      * Reverse the migrations.

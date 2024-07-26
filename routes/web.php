@@ -23,5 +23,6 @@ require __DIR__ . '/auth.php';
 
 Route::get('admin/dashboard', [HomeController::class, 'index'])->middleware(['auth', 'admin'])->name('admin.dashboard');
 
+// Admin tambah
 Route::get('admin/event/addEvent', [EventController::class, 'addEvent'])->name('event.add');
 Route::post('admin/saveEvent', [EventController::class, 'saveEvent'])->name('event.save');
