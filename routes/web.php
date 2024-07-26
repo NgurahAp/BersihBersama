@@ -4,9 +4,12 @@ use App\Http\Controllers\EventController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
+use App\Models\Event;
 
 Route::get('/', function () {
-    return view('welcome');
+    $event =
+        Event::latest()->take(2)->get();
+    return view('welcome', ['event' => $event]);
 });
 
 Route::get('/dashboard', function () {
