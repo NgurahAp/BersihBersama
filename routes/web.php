@@ -9,8 +9,7 @@ use App\Models\Blog;
 use App\Models\Event;
 
 Route::get('/', function () {
-    $event =
-        Event::latest()->take(2)->get();
+    $event = Event::where('status', 'disetujui')->latest()->take(2)->get();
     $blog =
         Blog::latest()->take(2)->get();
     return view('welcome', ['event' => $event, 'blog' => $blog]);

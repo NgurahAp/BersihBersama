@@ -15,12 +15,14 @@ class EventController extends Controller
     public function saveEvent(Request $request)
     {
         $request->validate([
+            'status' => 'nullable|string|max:255',
             'judul' => 'required|string|max:255',
             'deskripsi' => 'required|string|max:500',
             'alamat' => 'required|string|max:255',
             'kota' => 'required|string|max:15',
             'gmaps' => 'required|string|max:500',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'volunteer' => 'nullable|numeric',
             'wagrup' => 'required|string|max:500',
         ]);
 
@@ -31,6 +33,7 @@ class EventController extends Controller
         }
 
         $event = new Event();
+        $event->status = $request->input('status') ?? 'pending'; // Menggunakan nilai default 'pending' jika tidak diisi
         $event->judul = $request->judul;
         $event->deskripsi = $request->deskripsi;
         $event->alamat = $request->alamat;
@@ -38,6 +41,7 @@ class EventController extends Controller
         $event->gmaps = $request->gmaps;
         $event->image = $imageName;
         $event->wagrup = $request->wagrup;
+        $event->volunteer = $request->input('volunteer') ?? 0; // Menggunakan nilai default 0 jika tidak diisi
         $event->save();
 
         return redirect()->route('admin.dashboard')->with('success', 'Event berhasil ditambahkan');

@@ -10,12 +10,15 @@ class Event extends Model
     use HasFactory;
 
     protected $fillable = [
-        'judul', 
+        'status',
+        'judul',
         'deskripsi',
         'alamat',
         'kota',
         'gmaps',
         'image',
-        'wagrup'
+        'wagrup',
+        'volunteer',
+        'partisipan',
     ];
 }
