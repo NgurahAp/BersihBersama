@@ -5,13 +5,15 @@ use App\Http\Controllers\EventController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
+use App\Models\Blog;
 use App\Models\Event;
-use PHPUnit\Framework\TestStatus\Risky;
 
 Route::get('/', function () {
     $event =
         Event::latest()->take(2)->get();
-    return view('welcome', ['event' => $event]);
+    $blog =
+        Blog::latest()->take(2)->get();
+    return view('welcome', ['event' => $event, 'blog' => $blog]);
 });
 
 Route::get('/dashboard', function () {

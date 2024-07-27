@@ -17,9 +17,9 @@ class BlogController extends Controller
     {
         $request->validate([
             'judul' => 'required|string|max:255',
-            'deskripsi' => 'required|string|max:1000',
+            'deskripsi' => 'required|string|max:9999',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
-           
+
         ]);
 
         $imageName = null;
