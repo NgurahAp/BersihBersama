@@ -2,7 +2,7 @@
     <nav>
         <ul>
             <li class="mb-4"><a href="{{ route('event.add') }}" class="hover:underline">Tambah Event</a></li>
-            <li class="mb-4"><a href="" class="hover:underline">Manage Events</a></li>
+            <li class="mb-4"><a href="{{ route('blog.add') }}" class="hover:underline">Tambah Blog</a></li>
             <li class="mb-4"><a href="" class="hover:underline">Manage Complaints</a></li>
             <li class="mb-4"><a href="" class="hover:underline">Manage Blogs</a></li>
             <li class="mb-4">
