@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use App\Models\Event;
+use PHPUnit\Framework\TestStatus\Risky;
 
 Route::get('/', function () {
     $event =
@@ -33,3 +34,4 @@ Route::post('admin/saveEvent', [EventController::class, 'saveEvent'])->name('eve
 
 // Admin tambah Blog
 Route::get('admin/blog/addBlog', [BlogController::class, 'addBlog'])->name('blog.add');
+Route::post('admin/saveBlog', [BlogController::class, 'saveBlog'])->name('blog.save');
