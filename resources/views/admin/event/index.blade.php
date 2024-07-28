@@ -5,7 +5,8 @@
         <div class=" p-12 flex flex-col h-full">
             <div class="items-center justify-center">
                 <h1 class="text-black text-5xl font-bold text-center pb-2">Event</h1>
-                <h1 class="text-black text-2xl font-light pb-8 text-center">Berikut adalah event yang sudah disetujui oleh admin</h1>
+                <h1 class="text-black text-2xl font-light pb-8 text-center">Berikut adalah event yang sudah disetujui oleh
+                    admin</h1>
                 <div>
                     <div class="flex items-center justify-center flex-wrap">
                         @foreach ($event as $data)
@@ -23,7 +24,8 @@
                                     <p class=" font-normal text-gray-700 dark:text-gray-400">
                                         {{ $data->deskripsi = Str::limit($data->deskripsi, 90) }}
                                     </p>
-                                    <a href="" class="font-normal text-green-500 dark:text-gray-400 hover:underline">
+                                    <a href="detailEvent/{{ $data->id }}"
+                                        class="font-normal text-green-500 dark:text-gray-400 hover:underline">
                                         Lihat detail
                                     </a>
 

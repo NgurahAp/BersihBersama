@@ -34,6 +34,8 @@ Route::get('admin/event/index', [EventController::class, 'index'])->name('event.
 Route::get('admin/event/aduan', [EventController::class, 'aduan'])->name('event.aduan');
 Route::get('admin/event/addEvent', [EventController::class, 'addEvent'])->name('event.add');
 Route::post('admin/saveEvent', [EventController::class, 'saveEvent'])->name('event.save');
+Route::get('admin/event/detailEvent/{id}', [EventController::class, 'detailEvent'])->name('event.detail');
+
 
 // Admin tambah Blog
 Route::get('admin/blog/index', [BlogController::class, 'index'])->name('blog.index');

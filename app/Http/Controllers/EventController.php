@@ -14,6 +14,12 @@ class EventController extends Controller
         return view('admin.event.index', ['title' => 'Event', 'event' => $event]);
     }
 
+    public function detailEvent($id)
+    {
+        $event = Event::findOrFail($id);
+        return view('admin.event.detailEvent', ['title' => 'Detail Event', 'event' => $event]);
+    }
+
     public function aduan()
     {
         $aduan = Event::where('status', 'pending')->latest()->get();
