@@ -8,6 +8,13 @@ use Illuminate\Support\Facades\Auth;
 
 class BlogController extends Controller
 {
+
+    public function index()
+    {
+        $blog = Blog::all();
+        return view('admin.blog.index', ['title' => 'Event', 'blog' => $blog]);
+    }
+
     public function addBlog()
     {
         return view('admin.blog.addBlog', ['title' => 'Add Blog']);

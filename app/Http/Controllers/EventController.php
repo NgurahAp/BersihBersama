@@ -7,6 +7,19 @@ use Illuminate\Http\Request;
 
 class EventController extends Controller
 {
+
+    public function index()
+    {
+        $event = Event::where('status', 'disetujui')->latest()->get();
+        return view('admin.event.index', ['title' => 'Event', 'event' => $event]);
+    }
+
+    public function aduan()
+    {
+        $aduan = Event::where('status', 'pending')->latest()->get();
+        return view('admin.event.aduan', ['title' => 'Event', 'aduan' => $aduan]);
+    }
+
     public function addEvent()
     {
         return view('admin.event.addEvent', ['title' => 'Add Event']);

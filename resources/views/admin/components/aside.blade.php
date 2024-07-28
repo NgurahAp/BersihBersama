@@ -1,10 +1,9 @@
 <aside class="bg-gray-800 text-white w-64 p-4">
     <nav>
         <ul>
-            <li class="mb-4"><a href="{{ route('event.add') }}" class="hover:underline">Tambah Event</a></li>
-            <li class="mb-4"><a href="{{ route('blog.add') }}" class="hover:underline">Tambah Blog</a></li>
-            <li class="mb-4"><a href="" class="hover:underline">Manage Complaints</a></li>
-            <li class="mb-4"><a href="" class="hover:underline">Manage Blogs</a></li>
+            <li class="mb-4"><a href="{{ route('event.index') }}" class="hover:underline">Event</a></li>
+            <li class="mb-4"><a href="{{ route('event.aduan') }}" class="hover:underline">aduan</a></li>
+            <li class="mb-4"><a href="{{ route('blog.index') }}" class="hover:underline">Blog</a></li>
             <li class="mb-4">
                 <form method="POST" action="{{ route('logout') }}" class="inline">
                     @csrf

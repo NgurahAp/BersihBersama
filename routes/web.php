@@ -30,9 +30,12 @@ require __DIR__ . '/auth.php';
 Route::get('admin/dashboard', [HomeController::class, 'index'])->middleware(['auth', 'admin'])->name('admin.dashboard');
 
 // Admin tambah Event
+Route::get('admin/event/index', [EventController::class, 'index'])->name('event.index');
+Route::get('admin/event/aduan', [EventController::class, 'aduan'])->name('event.aduan');
 Route::get('admin/event/addEvent', [EventController::class, 'addEvent'])->name('event.add');
 Route::post('admin/saveEvent', [EventController::class, 'saveEvent'])->name('event.save');
 
 // Admin tambah Blog
+Route::get('admin/blog/index', [BlogController::class, 'index'])->name('blog.index');
 Route::get('admin/blog/addBlog', [BlogController::class, 'addBlog'])->name('blog.add');
 Route::post('admin/saveBlog', [BlogController::class, 'saveBlog'])->name('blog.save');
