@@ -20,11 +20,6 @@ class EventController extends Controller
         return view('admin.event.detailEvent', ['title' => 'Detail Event', 'event' => $event]);
     }
 
-    public function aduan()
-    {
-        $aduan = Event::where('status', 'pending')->latest()->get();
-        return view('admin.event.aduan', ['title' => 'Event', 'aduan' => $aduan]);
-    }
 
     public function addEvent()
     {

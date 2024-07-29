@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AduanController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\EventController;
 use Illuminate\Support\Facades\Route;
@@ -29,15 +30,17 @@ require __DIR__ . '/auth.php';
 
 Route::get('admin/dashboard', [HomeController::class, 'index'])->middleware(['auth', 'admin'])->name('admin.dashboard');
 
-// Admin tambah Event
+// Admin Event
 Route::get('admin/event/index', [EventController::class, 'index'])->name('event.index');
-Route::get('admin/event/aduan', [EventController::class, 'aduan'])->name('event.aduan');
 Route::get('admin/event/addEvent', [EventController::class, 'addEvent'])->name('event.add');
 Route::post('admin/saveEvent', [EventController::class, 'saveEvent'])->name('event.save');
 Route::get('admin/event/detailEvent/{id}', [EventController::class, 'detailEvent'])->name('event.detail');
 
+//  Admin Aduan
+Route::get('admin/aduan/index', [AduanController::class, 'index'])->name('aduan.index');
+Route::get('admin/aduan/detailAduan/{id}', [AduanController::class, 'detailAduan'])->name('aduan.detail');
 
-// Admin tambah Blog
+// Admin Blog
 Route::get('admin/blog/index', [BlogController::class, 'index'])->name('blog.index');
 Route::get('admin/blog/addBlog', [BlogController::class, 'addBlog'])->name('blog.add');
 Route::post('admin/saveBlog', [BlogController::class, 'saveBlog'])->name('blog.save');
