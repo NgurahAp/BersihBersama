@@ -60,4 +60,10 @@ class EventController extends Controller
 
         return redirect()->route('admin.dashboard')->with('success', 'Event berhasil ditambahkan');
     }
+
+    public function editEvent($id)
+    {
+        $event = Event::findOrFail($id);
+        return view('admin.event.editEvent', ['title' => 'Edit Event', 'event' => $event]);
+    }
 }

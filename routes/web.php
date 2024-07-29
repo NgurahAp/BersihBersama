@@ -33,8 +33,11 @@ Route::get('admin/dashboard', [HomeController::class, 'index'])->middleware(['au
 // Admin Event
 Route::get('admin/event/index', [EventController::class, 'index'])->name('event.index');
 Route::get('admin/event/detailEvent/{id}', [EventController::class, 'detailEvent'])->name('event.detail');
+// Add
 Route::get('admin/event/addEvent', [EventController::class, 'addEvent'])->name('event.add');
 Route::post('admin/saveEvent', [EventController::class, 'saveEvent'])->name('event.save');
+// Edit
+Route::get('admin/event/editEvent/{id}', [EventController::class, 'editEvent'])->name('event.edit');
 
 //  Admin Aduan
 Route::get('admin/aduan/index', [AduanController::class, 'index'])->name('aduan.index');
