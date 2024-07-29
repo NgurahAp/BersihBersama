@@ -40,7 +40,7 @@
                                         <h1 class="text-lg font-medium text-gray-900 dark:text-white">
                                             {{ $data->author->name }}</h1>
                                     </div>
-                                    <a href="{{ route('login') }}"
+                                    <a href="detailBlog/{{ $data->id }}"
                                         class="font-normal text-green-500 dark:text-gray-400 hover:underline">
                                         Selengkapnya ->
                                     </a>

@@ -15,6 +15,12 @@ class BlogController extends Controller
         return view('admin.blog.index', ['title' => 'Event', 'blog' => $blog]);
     }
 
+    public function detailBlog($id)
+    {
+        $blog = Blog::findOrFail($id);
+        return view('admin.blog.detailBlog', ['title' => 'Detail Blog', 'blog' => $blog]);
+    }
+
     public function addBlog()
     {
         return view('admin.blog.addBlog', ['title' => 'Add Blog']);
