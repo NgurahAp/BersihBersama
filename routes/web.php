@@ -49,6 +49,7 @@ Route::get('admin/aduan/index', [AduanController::class, 'index'])->name('aduan.
 Route::get('admin/aduan/detailAduan/{id}', [AduanController::class, 'detailAduan'])->name('aduan.detail');
 Route::get('admin/aduan/editAduan/{id}', [AduanController::class, 'editAduan'])->name('aduan.edit');
 Route::put('admin/aduan/updateAduan/{id}', [AduanController::class, 'updateAduan'])->name('aduan.update');
+Route::delete('admin/aduan/deleteAduan/{id}', [AduanController::class, 'deleteAduan'])->name('aduan.delete');
 
 // Admin Blog
 Route::get('admin/blog/index', [BlogController::class, 'index'])->name('blog.index');

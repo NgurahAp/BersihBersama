@@ -69,4 +69,17 @@ class AduanController extends Controller
 
         return redirect()->route('admin.dashboard')->with('success', 'Event berhasil ditambahkan');
     }
+
+    public function deleteAduan($id)
+    {
+        $aduan = Event::findOrFail($id);
+
+        // Hapus gambar terkait jika ada
+        if ($aduan->image && file_exists(public_path('images/' . $aduan->image))) {
+            unlink(public_path('images/' . $aduan->image));
+        }
+
+        $aduan->delete();
+        return redirect()->route('admin.dashboard');
+    }
 }
