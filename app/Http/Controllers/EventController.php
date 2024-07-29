@@ -115,4 +115,17 @@ class EventController extends Controller
 
         return redirect()->route('admin.dashboard')->with('success', 'Event berhasil ditambahkan');
     }
+
+    public function deleteEvent($id)
+    {
+        $event = Event::findOrFail($id);
+
+        // Hapus gambar terkait jika ada
+        if ($event->image && file_exists(public_path('images/' . $event->image))) {
+            unlink(public_path('images/' . $event->image));
+        }
+
+        $event->delete();
+        return redirect()->route('admin.dashboard');
+    }
 }

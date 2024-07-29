@@ -39,6 +39,9 @@ Route::post('admin/saveEvent', [EventController::class, 'saveEvent'])->name('eve
 // Edit
 Route::get('admin/event/editEvent/{id}', [EventController::class, 'editEvent'])->name('event.edit');
 Route::put('admin/event/updateEvent/{id}', [EventController::class, 'updateEvent'])->name('event.update');
+// Delete
+Route::delete('admin/event/deleteEvent/{id}', [EventController::class, 'deleteEvent'])->name('event.delete');
+
 
 
 //  Admin Aduan
