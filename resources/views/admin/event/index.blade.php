@@ -1,3 +1,6 @@
+@php
+    use Carbon\Carbon;
+@endphp
 @extends('admin.components.layout')
 
 @section('content')
@@ -21,6 +24,9 @@
                                     <p class=" font-bold text-gray-700 dark:text-gray-400">
                                         {{ $data->kota }}
                                     </p>
+                                    <p class="text-gray-600">
+                                        {{ Carbon::parse($data->event_date)->format('d F Y') }}</p>
+
                                     <p class=" font-normal text-gray-700 dark:text-gray-400">
                                         {{ $data->deskripsi = Str::limit($data->deskripsi, 90) }}
                                     </p>

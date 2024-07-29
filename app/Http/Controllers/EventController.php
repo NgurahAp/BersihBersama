@@ -30,6 +30,7 @@ class EventController extends Controller
     {
         $request->validate([
             'status' => 'nullable|string|max:255',
+            'date' => 'nullable|date',
             'judul' => 'required|string|max:255',
             'deskripsi' => 'required|string|max:500',
             'alamat' => 'required|string|max:255',
@@ -37,6 +38,7 @@ class EventController extends Controller
             'gmaps' => 'required|string|max:500',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
             'volunteer' => 'nullable|numeric',
+            'partisipan' => 'nullable|numeric',
             'wagrup' => 'required|string|max:500',
         ]);
 
@@ -49,6 +51,7 @@ class EventController extends Controller
         $event = new Event();
         $event->status = $request->input('status') ?? 'pending'; // Menggunakan nilai default 'pending' jika tidak diisi
         $event->judul = $request->judul;
+        $event->event_date = $request->input('date') ?? now()->toDateString();
         $event->deskripsi = $request->deskripsi;
         $event->alamat = $request->alamat;
         $event->kota = $request->kota;
@@ -56,6 +59,7 @@ class EventController extends Controller
         $event->image = $imageName;
         $event->wagrup = $request->wagrup;
         $event->volunteer = $request->input('volunteer') ?? 0; // Menggunakan nilai default 0 jika tidak diisi
+        $event->partisipan = $request->input('partisipan') ?? 0;
         $event->save();
 
         return redirect()->route('admin.dashboard')->with('success', 'Event berhasil ditambahkan');
@@ -73,6 +77,7 @@ class EventController extends Controller
         $event = Event::findOrFail($id);
         $request->validate([
             'status' => 'nullable|string|max:255',
+            'date' => 'nullable|date',
             'judul' => 'required|string|max:255',
             'deskripsi' => 'required|string|max:500',
             'alamat' => 'required|string|max:255',
@@ -80,6 +85,7 @@ class EventController extends Controller
             'gmaps' => 'required|string|max:500',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
             'volunteer' => 'nullable|numeric',
+            'partisipan' => 'nullable|numeric',
             'wagrup' => 'required|string|max:500',
         ]);
 
@@ -97,12 +103,14 @@ class EventController extends Controller
 
         $event->status = $request->input('status') ?? 'pending'; // Menggunakan nilai default 'pending' jika tidak diisi
         $event->judul = $request->judul;
+        $event->event_date = $request->date;
         $event->deskripsi = $request->deskripsi;
         $event->alamat = $request->alamat;
         $event->kota = $request->kota;
         $event->gmaps = $request->gmaps;
         $event->wagrup = $request->wagrup;
         $event->volunteer = $request->input('volunteer') ?? 0; // Menggunakan nilai default 0 jika tidak diisi
+        $event->partisipan = $request->input('partisipan') ?? 0;
         $event->save();
 
         return redirect()->route('admin.dashboard')->with('success', 'Event berhasil ditambahkan');

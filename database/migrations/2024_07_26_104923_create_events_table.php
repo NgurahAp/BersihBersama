@@ -13,7 +13,8 @@ return new class extends Migration
     {
         Schema::create('events', function (Blueprint $table) {
             $table->id();
-            $table->string('status')->default('pending');
+            $table->string('status');
+            $table->date('event_date');
             $table->string('judul');
             $table->text('deskripsi');
             $table->string('alamat');
@@ -21,8 +22,8 @@ return new class extends Migration
             $table->string('gmaps');
             $table->string('image')->nullable();
             $table->string('wagrup');
-            $table->integer('volunteer')->default(0);
-            $table->integer('partisipan')->default(0);
+            $table->integer('volunteer');
+            $table->integer('partisipan');
             $table->timestamps();
         });
     }

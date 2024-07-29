@@ -1,3 +1,7 @@
+@php
+    use Carbon\Carbon;
+@endphp
+
 @extends('admin.components.layout')
 
 @section('content')
@@ -5,7 +9,7 @@
         <img src="{{ asset('images/' . $event->image) }}" alt="Post Image" class="w-full h-64 object-cover rounded-lg mb-6">
         <div class="mb-4">
             <h1 class="text-3xl font-bold mb-2">{{ $event->judul }}</h1>
-            <p class="text-gray-600"><strong>Tanggal:</strong> {{ $event->created_at->format('d M Y') }}</p>
+            <p class="text-gray-600"><strong>Tanggal:</strong> {{ Carbon::parse($event->event_date)->format('d F Y') }}</p>
         </div>
         <div class="mb-4">
             <p class="text-lg"><strong>Deskripsi:</strong> {{ $event->deskripsi }}</p>
