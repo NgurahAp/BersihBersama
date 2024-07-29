@@ -38,6 +38,8 @@ Route::get('admin/event/addEvent', [EventController::class, 'addEvent'])->name('
 Route::post('admin/saveEvent', [EventController::class, 'saveEvent'])->name('event.save');
 // Edit
 Route::get('admin/event/editEvent/{id}', [EventController::class, 'editEvent'])->name('event.edit');
+Route::put('admin/event/updateEvent/{id}', [EventController::class, 'updateEvent'])->name('event.update');
+
 
 //  Admin Aduan
 Route::get('admin/aduan/index', [AduanController::class, 'index'])->name('aduan.index');
