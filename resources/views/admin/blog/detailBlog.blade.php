@@ -12,8 +12,9 @@
             <p class="text-lg"><strong>Deskripsi:</strong> {{ $blog->deskripsi }}</p>
         </div>
         <div class="flex justify-end space-x-2 mt-6">
-            <a href="" class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">Edit</a>
-            <form action="" method="POST" style="display:inline-block;">
+            <a href="{{ route('blog.edit', $blog->id) }}"
+                class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">Edit</a>
+            <form action="{{ route('blog.delete', $blog->id) }}" method="POST" style="display:inline-block;">
                 @csrf
                 @method('DELETE')
                 <button type="submit" class="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600">Hapus</button>

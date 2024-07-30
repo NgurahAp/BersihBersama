@@ -58,7 +58,7 @@
         <div class="fixed bottom-10 right-10">
             <a href="{{ route('blog.add') }}"
                 class="flex bg-blue-500 justify-center items-center hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
-                <h1 class="pr-2">Crate Blog</h1>
+                <h1 class="pr-2">Create Blog</h1>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                     stroke="currentColor" class="size-8">
                     <path stroke-linecap="round" stroke-linejoin="round"
