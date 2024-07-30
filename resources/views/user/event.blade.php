@@ -3,7 +3,10 @@
 @endphp
 <x-layout.app>
     <x-slot:title>{{ $title }}</x-slot:title>
-    <x-layout.navbar></x-layout.navbar>
+    <x-layout.navbar>
+        <x-slot:home>{{ route('dashboard') }}</x-slot:home>
+        <x-slot:about>{{ route('dashboard') }}</x-slot:about>
+    </x-layout.navbar>
     <div id="event" class="h-[90vh] py-20 px-16">
         <div class="flex flex-col h-full">
             <div class="items-center justify-center">
