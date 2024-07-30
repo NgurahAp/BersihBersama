@@ -11,17 +11,9 @@ use App\Models\Event;
 
 Route::get('/', function () {
     $event = Event::where('status', 'disetujui')->latest()->take(2)->get();
-    $blog =
-        Blog::latest()->take(2)->get();
-    return view('welcome', ['event' => $event, 'blog' => $blog]);
+    $blog = Blog::latest()->take(2)->get();
+    return view('welcome', ['title' => 'BersihBersama', 'event' => $event, 'blog' => $blog]);
 });
-
-Route::get('/dashboard', function () {
-    $event = Event::where('status', 'disetujui')->latest()->take(2)->get();
-    $blog =
-        Blog::latest()->take(2)->get();
-    return view('dashboard',['event' => $event, 'blog' => $blog]);
-})->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -31,9 +23,18 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__ . '/auth.php';
 
-Route::get('admin/dashboard', [HomeController::class, 'index'])->middleware(['auth', 'admin'])->name('admin.dashboard');
+// User
+Route::get('/user/dashboard', function () {
+    $event = Event::where('status', 'disetujui')->latest()->take(2)->get();
+    $blog = Blog::latest()->take(2)->get();
+    return view('user.dashboard', ['title' => 'BersihBersama', 'event' => $event, 'blog' => $blog]);
+})->middleware(['auth', 'verified'])->name('dashboard');
+// Event
+Route::get('user/event', [EventController::class, 'indexUser'])->name('user.event');
 
-// Admin Event
+// Admin
+Route::get('admin/dashboard', [HomeController::class, 'index'])->middleware(['auth', 'admin'])->name('admin.dashboard');
+// Event
 Route::get('admin/event/index', [EventController::class, 'index'])->name('event.index');
 Route::get('admin/event/detailEvent/{id}', [EventController::class, 'detailEvent'])->name('event.detail');
 // Add
@@ -45,7 +46,7 @@ Route::put('admin/event/updateEvent/{id}', [EventController::class, 'updateEvent
 // Delete
 Route::delete('admin/event/deleteEvent/{id}', [EventController::class, 'deleteEvent'])->name('event.delete');
 
-//  Admin Aduan
+// Aduan
 Route::get('admin/aduan/index', [AduanController::class, 'index'])->name('aduan.index');
 Route::get('admin/aduan/detailAduan/{id}', [AduanController::class, 'detailAduan'])->name('aduan.detail');
 // Edit
@@ -54,7 +55,7 @@ Route::put('admin/aduan/updateAduan/{id}', [AduanController::class, 'updateAduan
 // Delete
 Route::delete('admin/aduan/deleteAduan/{id}', [AduanController::class, 'deleteAduan'])->name('aduan.delete');
 
-// Admin Blog
+// Blog
 Route::get('admin/blog/index', [BlogController::class, 'index'])->name('blog.index');
 Route::get('admin/blog/detailBlog/{id}', [BlogController::class, 'detailBlog'])->name('blog.detail');
 // Add

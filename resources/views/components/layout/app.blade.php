@@ -14,6 +14,8 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <title>{{ $title }}</title>
+    <link rel="icon" type="image/png" href="{{ asset('images/head.png') }}">
     @yield('styles')
 </head>
 

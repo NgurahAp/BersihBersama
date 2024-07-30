@@ -14,6 +14,13 @@ class EventController extends Controller
         return view('admin.event.index', ['title' => 'Event', 'event' => $event]);
     }
 
+    public function indexUser()
+    {
+        $event = Event::where('status', 'disetujui')->latest()->get();
+        return view('user.event', ['title' => 'Event', 'event' => $event]);
+    }
+
+
     public function detailEvent($id)
     {
         $event = Event::findOrFail($id);
