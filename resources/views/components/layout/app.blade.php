@@ -1,5 +1,9 @@
+@php
+    use Carbon\Carbon;
+@endphp
+
 <!doctype html>
-<html>
+<html class="scroll-smooth">
 
 <head>
     <meta charset="utf-8">
@@ -13,11 +17,14 @@
     @yield('styles')
 </head>
 
-<body>
-    <x-layout.navbar></x-layout.navbar>
-    
-
+<body style=" font-family: 'Inter', sans-serif;">
     {{ $slot }}
+    <script src="https://kit.fontawesome.com/ba315d3bcc.js" crossorigin="anonymous" defer></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
+
 
 </html>

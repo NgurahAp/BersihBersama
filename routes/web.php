@@ -17,7 +17,10 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    $event = Event::where('status', 'disetujui')->latest()->take(2)->get();
+    $blog =
+        Blog::latest()->take(2)->get();
+    return view('dashboard',['event' => $event, 'blog' => $blog]);
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
