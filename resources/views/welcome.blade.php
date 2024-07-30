@@ -280,8 +280,7 @@
                                 </p>
                                 <div class="flex justify-between">
                                     <div class="flex items-center">
-                                        <img src="https://via.placeholder.com/40" alt="Profile Image"
-                                            class="w-10 h-10 rounded-full mr-2">
+                                        <img src="{{ url('images/profil.png')}}" alt="Profile Image" class="w-10 h-10 rounded-full mr-2">
                                         <h1 class="text-lg font-medium text-gray-900 dark:text-white">
                                             {{ $data->author->name }}</h1>
                                     </div>
