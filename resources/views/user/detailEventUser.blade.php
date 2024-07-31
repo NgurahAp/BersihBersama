@@ -10,27 +10,26 @@
     <div class="max-w-4xl py-20 mx-auto p-6 bg-white rounded-lg shadow-md">
         <img src="{{ asset('images/' . $event->image) }}" alt="Post Image"
             class="w-full h-64 object-cover rounded-lg mb-6">
-        <div class="mb-4">
-            <h1 class="text-3xl font-bold mb-2">{{ $event->judul }}</h1>
-            <p class="text-gray-600"><strong>Tanggal:</strong> {{ Carbon::parse($event->event_date)->format('d F Y') }}
+        <div class="mb-6">
+            <h1 class="text-4xl font-bold mb-2">{{ $event->judul }}</h1>
+
+            <p class="">{{ $event->deskripsi }}</p>
+        </div>
+        <div class="mb-6">
+            <h1 class="text-2xl font-semibold mb-2">Alamat</h1>
+            <p class=""> {{ $event->alamat }}</p>
+            <p class="">{{ $event->kota }}</p>
+            <p class="">Link Maps : <a href="{{ $event->gmaps }}" target="_blank"
+                    class="text-blue-500 underline">Lihat di Google Maps</a></p>
             </p>
         </div>
-        <div class="mb-4">
-            <p class="text-lg">{{ $event->deskripsi }}</p>
-        </div>
-        <div class="mb-4">
-            <p class="text-lg"><strong>Alamat:</strong> {{ $event->alamat }}</p>
-            <p class="text-lg"><strong>Kota:</strong> {{ $event->kota }}</p>
-        </div>
-        <div class="mb-4">
-            <p class="text-lg"><strong>Google Maps:</strong> <a href="{{ $event->gmaps }}" target="_blank"
-                    class="text-blue-500 underline">Lihat di Google Maps</a></p>
-        </div>
-        <div class="mb-4">
-            <p class="text-lg"><strong>Volunteer:</strong> {{ $event->volunteer }}</p>
-        </div>
-        <div class="mb-4">
-            <p class="text-lg"><strong>Partisipan:</strong> {{ $event->partisipan }}</p>
+        <div class="mb-6">
+            <h1 class="text-2xl font-semibold mb-2">Pelaksanaan Kegiatan</h1>
+            <p class="">Tanggal : {{ Carbon::parse($event->event_date)->format('d F Y') }}
+            <p>
+            <p class="">Partisipan yang dibutuhkan : {{ $event->volunteer }}</p>
+            <p class="">Partisipan saat ini :{{ $event->partisipan }}</p>
+
         </div>
         <div class="flex justify-center space-x-2 mt-6">
             <div class="flex items-center justify-center mt-auto">
