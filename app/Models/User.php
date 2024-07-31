@@ -50,4 +50,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Blog::class, 'author_id'); // Untuk mengeset foreign key 'author_id'
     }
+
+    public function events()
+    {
+        return $this->belongsToMany(Event::class, 'event_user')->withTimestamps();
+    }
 }

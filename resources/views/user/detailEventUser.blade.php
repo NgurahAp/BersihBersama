@@ -33,10 +33,17 @@
         </div>
         <div class="flex justify-center space-x-2 mt-6">
             <div class="flex items-center justify-center mt-auto">
-                <a href=""
-                    class="align-middle select-none font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-sm md:text-m py-4 px-8 bg-green-400 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none rounded-full">
-                    Ikuti Kegiatan
-                </a>
+                @if ($event->users->contains(auth()->user()->id))
+                    <p>Anda sudah terdaftar dalam kegiatan ini.</p>
+                @else
+                    <form action="{{ route('user.event.join', $event->id) }}" method="POST">
+                        @csrf
+                        <button type="submit"
+                            class="align-middle select-none font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-sm md:text-m py-4 px-8 bg-green-400 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none rounded-full">
+                            Ikuti Kegiatan
+                        </button>
+                    </form>
+                @endif
             </div>
         </div>
     </div>

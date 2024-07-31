@@ -32,6 +32,8 @@ Route::get('/user/dashboard', function () {
 // Event
 Route::get('user/event', [EventController::class, 'indexUser'])->name('user.event');
 Route::get('user/detailEventUser/{id}', [EventController::class, 'detailEventUser'])->name('user.detailEvent');
+// Ikuti Kegiatan
+Route::post('user/event/join/{id}', [EventController::class, 'joinEvent'])->name('user.event.join');
 
 // Admin
 Route::get('admin/dashboard', [HomeController::class, 'index'])->middleware(['auth', 'admin'])->name('admin.dashboard');

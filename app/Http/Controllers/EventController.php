@@ -33,6 +33,23 @@ class EventController extends Controller
         return view('user.detailEventUser', ['title' => 'Detail Event', 'event' => $event]);
     }
 
+    public function joinEvent($id)
+    {
+        $event = Event::findOrFail($id);
+        $user = auth()->user();
+
+        // Cek apakah user sudah mendaftar di event ini
+        if ($event->users()->where('user_id', $user->id)->exists()) {
+            return redirect()->route('user.event')->with('error', 'Anda sudah mengikuti kegiatan ini.');
+        }
+
+        // Tambah user ke event
+        $event->users()->attach($user->id);
+        $event->partisipan += 1;
+        $event->save();
+
+        return redirect()->route('user.event')->with('success', 'Anda telah berhasil mengikuti kegiatan.');
+    }
 
     public function addEvent()
     {
