@@ -33,7 +33,7 @@
                                     <p class=" font-normal text-gray-700 dark:text-gray-400">
                                         {{ $data->deskripsi = Str::limit($data->deskripsi, 90) }}
                                     </p>
-                                    <a href="{{ route('login') }}"
+                                    <a href="detailEventUser/{{ $data->id }}"
                                         class="font-normal text-green-500 dark:text-gray-400 hover:underline">
                                         Lihat detail
                                     </a>

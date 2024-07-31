@@ -31,6 +31,7 @@ Route::get('/user/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 // Event
 Route::get('user/event', [EventController::class, 'indexUser'])->name('user.event');
+Route::get('user/detailEventUser/{id}', [EventController::class, 'detailEventUser'])->name('user.detailEvent');
 
 // Admin
 Route::get('admin/dashboard', [HomeController::class, 'index'])->middleware(['auth', 'admin'])->name('admin.dashboard');

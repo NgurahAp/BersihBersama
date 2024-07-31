@@ -27,6 +27,12 @@ class EventController extends Controller
         return view('admin.event.detailEvent', ['title' => 'Detail Event', 'event' => $event]);
     }
 
+    public function detailEventUser($id)
+    {
+        $event = Event::findOrFail($id);
+        return view('user.detailEventUser', ['title' => 'Detail Event', 'event' => $event]);
+    }
+
 
     public function addEvent()
     {
