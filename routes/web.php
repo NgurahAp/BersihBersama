@@ -32,6 +32,10 @@ Route::get('/user/dashboard', function () {
 // Event
 Route::get('user/event', [EventController::class, 'indexUser'])->name('user.event');
 Route::get('user/detailEventUser/{id}', [EventController::class, 'detailEventUser'])->name('user.detailEvent');
+// Blog
+Route::get('user/blog', [BlogController::class, 'indexUser'])->name('user.blog');
+Route::get('user/detailBlogUser/{id}', [BlogController::class, 'detailBlogUser'])->name('user.detailBlog');
+
 // Ikuti Kegiatan
 Route::post('user/event/join/{id}', [EventController::class, 'joinEvent'])->name('user.event.join');
 

@@ -73,5 +73,5 @@ export default {
         },
     },
 
-    plugins: [forms, flowbite],
+    plugins: [require("flowbite-typography"), forms, flowbite],
 };

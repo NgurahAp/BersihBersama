@@ -109,7 +109,7 @@
                 </div>
             </div>
             <div class="flex items-center justify-center mt-auto">
-                <a href="{{ route('login') }}"
+                <a href="{{ route('user.blog') }}"
                     class="align-middle select-none font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-sm md:text-m py-4 px-8 bg-green-400 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none rounded-full">
                     Artikel Lainnya ->
                 </a>

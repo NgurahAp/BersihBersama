@@ -15,10 +15,22 @@ class BlogController extends Controller
         return view('admin.blog.index', ['title' => 'Event', 'blog' => $blog]);
     }
 
+    public function indexUser()
+    {
+        $blog = Blog::all();
+        return view('user.blog', ['title' => 'blog', 'blog' => $blog]);
+    }
+
     public function detailBlog($id)
     {
         $blog = Blog::findOrFail($id);
         return view('admin.blog.detailBlog', ['title' => 'Detail Blog', 'blog' => $blog]);
+    }
+
+    public function detailBlogUser($id)
+    {
+        $blog = Blog::findOrFail($id);
+        return view('user.detailBlogUser', ['title' => 'Detail Blog', 'blog' => $blog]);
     }
 
     public function addBlog()
@@ -31,7 +43,7 @@ class BlogController extends Controller
         $request->validate([
             'judul' => 'required|string|max:255',
             'deskripsi' => 'required|string|max:9999',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:9999',
 
         ]);
 
