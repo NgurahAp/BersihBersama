@@ -9,13 +9,18 @@
     </x-layout.navbar>
     <div class="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-md">
         <img src="{{ asset('images/' . $blog->image) }}" alt="Post Image" class="w-full h-64 object-cover rounded-lg mb-6">
-        <div class="mb-4">
-            <h1 class="text-3xl font-bold mb-2">{{ $blog->judul }}</h1>
-            <p class="text-gray-600"><strong>Tanggal:</strong> {{ $blog->created_at->format('d M Y') }}</p>
-            <p class="text-gray-600"><strong>Author:</strong> {{ $blog->author->name }}</p>
+        <div class="flex items-center space-x-4">
+            <img class="w-16 h-16 rounded-full" src="https://via.placeholder.com/150" alt="Author photo">
+            <div>
+                <h4 class="text-xl font-bold">{{ $blog->author->name }}</h4>
+                <p class="text-gray-600">{{ $blog->created_at->format('d M Y') }}</p>
+            </div>
         </div>
         <div class="mb-4">
-            <p class="text-lg"><strong>Deskripsi:</strong> {!! nl2br(e($blog->deskripsi)) !!}
+            <h1 class="text-3xl font-bold mb-2">{{ $blog->judul }}</h1>
+        </div>
+        <div class="mb-4">
+            <p class="text-lg">{!! nl2br(e($blog->deskripsi)) !!}
             </p>
         </div>
     </div>

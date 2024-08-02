@@ -25,23 +25,21 @@
                                     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                                         {{ $data->judul }}
                                     </h5>
-                                    <p class=" font-bold text-gray-700 dark:text-gray-400">
+                                    <p class="font-bold text-gray-700 dark:text-gray-400">
                                         {{ $data->kota }}
                                     </p>
                                     <p class="text-gray-600">
                                         {{ Carbon::parse($data->event_date)->format('d F Y') }}</p>
-                                    <p class=" font-normal text-gray-700 dark:text-gray-400">
-                                        {{ $data->deskripsi = Str::limit($data->deskripsi, 90) }}
+                                    <p class="font-normal text-gray-700 dark:text-gray-400">
+                                        {{ Str::limit($data->deskripsi, 90) }}
                                     </p>
                                     <a href="{{ route('login') }}"
                                         class="font-normal text-green-500 dark:text-gray-400 hover:underline">
                                         Lihat detail
                                     </a>
-
                                 </div>
                             </div>
                         @endforeach
-
                     </div>
                 </div>
             </div>
@@ -65,7 +63,7 @@
                         @foreach ($blog as $data)
                             <div
                                 class="relative flex flex-col w-2/5 m-5 p-5 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                                <div class="absolute top-2 left-5  flex items-center space-x-1">
+                                <div class="absolute top-2 left-5 flex items-center space-x-1">
                                     <svg class="w-5 h-5 text-green-400 dark:text-gray-400"
                                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                         stroke="currentColor">
@@ -76,8 +74,7 @@
                                 </div>
                                 <div class="absolute top-2 right-3">
                                     <span
-                                        class="text-sm text-gray-500 dark:text-gray-400">{{ $data->created_at->format('d F Y') }}
-                                    </span>
+                                        class="text-sm text-gray-500 dark:text-gray-400">{{ $data->created_at->format('d F Y') }}</span>
                                 </div>
                                 <a href="{{ route('login') }}">
                                     <h5
@@ -86,14 +83,20 @@
                                     </h5>
                                 </a>
                                 <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                                    {{ $data->deskripsi = Str::limit($data->deskripsi, 90) }}
+                                    {{ Str::limit($data->deskripsi, 90) }}
                                 </p>
                                 <div class="flex justify-between">
                                     <div class="flex items-center">
-                                        <img src="{{ url('images/profil.png') }}" alt="Profile Image"
-                                            class="w-10 h-10 rounded-full mr-2">
-                                        <h1 class="text-lg font-medium text-gray-900 dark:text-white">
-                                            {{ $data->author->name }}</h1>
+                                        @if ($data->author->profile_picture)
+                                            <img src="{{ asset('storage/' . $data->author->profile_picture) }}"
+                                                class="w-16 h-16 rounded-full mt-2" />
+                                        @else
+                                            <img src="{{ asset('images/profil.png') }}"
+                                                class="w-16 h-16 rounded-full mt-2" />
+                                        @endif
+                                        <h1 class="text-lg font-medium text-gray-900 dark:text-white ml-3">
+                                            {{ $data->author->name }}
+                                        </h1>
                                     </div>
                                     <a href="{{ route('login') }}"
                                         class="font-normal text-green-500 dark:text-gray-400 hover:underline">
@@ -102,10 +105,7 @@
                                 </div>
                             </div>
                         @endforeach
-
-
                     </div>
-
                 </div>
             </div>
             <div class="flex items-center justify-center mt-auto">
