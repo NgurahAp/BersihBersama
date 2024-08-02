@@ -1,6 +1,10 @@
 <x-guest-layout>
     <!-- Session Status -->
+    <x-slot:title>{{ $title }}</x-slot:title>
     <x-auth-session-status class="mb-4" :status="session('status')" />
+    <div class="flex justify-center py-4">
+        <img src="{{ asset('images/head.png') }}" class="w-20 h-20 rounded-full p-2 border-2 border-gray-700" />
+    </div>
 
     <form method="POST" action="{{ route('login') }}">
         @csrf
@@ -41,8 +45,8 @@
             @endif
 
             <a href="{{ route('register') }}"
-            class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
-            Register
+                class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
+                Register
             </a>
             <x-primary-button class="ms-3">
                 {{ __('Log in') }}
