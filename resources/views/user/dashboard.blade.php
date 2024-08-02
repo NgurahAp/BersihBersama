@@ -89,10 +89,10 @@
                                     <div class="flex items-center">
                                         @if ($data->author->profile_picture)
                                             <img src="{{ asset('storage/' . $data->author->profile_picture) }}"
-                                                class="w-16 h-16 rounded-full mt-2" />
+                                                class="w-12 h-12 rounded-full mt-2" />
                                         @else
                                             <img src="{{ asset('images/profil.png') }}"
-                                                class="w-16 h-16 rounded-full mt-2" />
+                                                class="w-12 h-12 rounded-full mt-2" />
                                         @endif
                                         <h1 class="text-lg font-medium text-gray-900 dark:text-white ml-3">
                                             {{ $data->author->name }}

@@ -7,7 +7,7 @@
         <x-slot:home>{{ route('dashboard') }}</x-slot:home>
         <x-slot:about>{{ route('dashboard') }}</x-slot:about>
     </x-layout.navbar>
-    <div id="event" class="h-[90vh] py-20 px-16">
+    <div id="event" class="h-min-[90vh] py-20 px-16">
         <div class="flex flex-col h-full">
             <div class="items-center justify-center">
                 <h1 class="text-black text-5xl font-bold text-center pb-2">Aksi</h1>

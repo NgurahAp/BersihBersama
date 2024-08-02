@@ -2,7 +2,7 @@
     use Carbon\Carbon;
 @endphp
 <x-layout.app>
-     <x-slot:title>{{ $title }}</x-slot:title>
+    <x-slot:title>{{ $title }}</x-slot:title>
     <x-layout.header>
         <nav
             class="bg-white  dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
@@ -104,7 +104,7 @@
             <div class="items-center justify-center">
                 <h1 class="text-black text-5xl pb-2 font-bold text-center">Blog</h1>
                 <h1 class="text-black text-2xl font-light pb-8 text-center">Temukan beragam informasi dan tips menarik
-                    seputar menjaga lingkungan dan kegiatan BersihBersama.!</h1>
+                    seputar menjaga lingkungan dan kegiatan BersihBersama!</h1>
                 <div>
                     <div class="flex items-center justify-center flex-wrap" data-aos="zoom-out"
                         data-aos-duration="1000">
@@ -136,10 +136,16 @@
                                 </p>
                                 <div class="flex justify-between">
                                     <div class="flex items-center">
-                                        <img src="{{ url('images/profil.png') }}" alt="Profile Image"
-                                            class="w-10 h-10 rounded-full mr-2">
-                                        <h1 class="text-lg font-medium text-gray-900 dark:text-white">
-                                            {{ $data->author->name }}</h1>
+                                        @if ($data->author->profile_picture)
+                                            <img src="{{ asset('storage/' . $data->author->profile_picture) }}"
+                                                class="w-12 h-12 rounded-full mt-2" />
+                                        @else
+                                            <img src="{{ asset('images/profil.png') }}"
+                                                class="w-12 h-12 rounded-full mt-2" />
+                                        @endif
+                                        <h1 class="text-lg font-medium text-gray-900 dark:text-white ml-3">
+                                            {{ $data->author->name }}
+                                        </h1>
                                     </div>
                                     <a href="{{ route('login') }}"
                                         class="font-normal text-green-500 dark:text-gray-400 hover:underline">
@@ -148,10 +154,7 @@
                                 </div>
                             </div>
                         @endforeach
-
-
                     </div>
-
                 </div>
             </div>
             <div class="flex items-center justify-center mt-auto">

@@ -66,7 +66,7 @@ class EventController extends Controller
             'alamat' => 'required|string|max:255',
             'kota' => 'required|string|max:15',
             'gmaps' => 'required|string|max:500',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:9999',
             'volunteer' => 'nullable|numeric',
             'partisipan' => 'nullable|numeric',
             'wagrup' => 'required|string|max:500',
