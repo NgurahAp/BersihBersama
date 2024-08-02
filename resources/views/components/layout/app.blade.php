@@ -19,7 +19,7 @@
     @yield('styles')
 </head>
 
-<body style=" font-family: 'Inter', sans-serif;">
+<body class="overflow-x-hidden" style="font-family: 'Inter', sans-serif;">
     {{ $slot }}
     <script src="https://kit.fontawesome.com/ba315d3bcc.js" crossorigin="anonymous" defer></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
