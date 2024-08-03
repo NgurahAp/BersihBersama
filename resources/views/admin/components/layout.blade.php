@@ -12,18 +12,19 @@
     @yield('styles')
 </head>
 
-<body style=" font-family: 'Inter', sans-serif;">
+<body style="font-family: 'Inter', sans-serif;">
     <div class="min-h-screen flex flex-col">
         <header class="bg-blue-500 text-white p-4 flex justify-between">
             <h1 class="text-2xl">Dashboard</h1>
-            <div class="flex justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                    stroke="currentColor" class="size-6">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                        d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                </svg>
+            <div class="flex items-center space-x-3"> <!-- Adjusted this line -->
+                @if (Auth::user()->profile_picture)
+                    <img src="{{ asset('storage/' . Auth::user()->profile_picture) }}"
+                        class="w-8 h-8 rounded-full" /> <!-- Removed margin-top class -->
+                @else
+                    <img src="{{ asset('images/profil.png') }}" class="w-8 h-8 rounded-full" /> <!-- Removed margin-top class -->
+                @endif
                 <a href="{{ route('profile.edit') }}"
-                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">{{ Auth::user()->name }}</a>
+                    class="block text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">{{ Auth::user()->name }}</a>
             </div>
         </header>
         <div class="flex flex-1">
