@@ -14,7 +14,7 @@
                     </ul>
                 </div>
             @endif
-            <form action="{{ route('event.save') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('admin.event.save') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
                     <div class="sm:col-span-2">

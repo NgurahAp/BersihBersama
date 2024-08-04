@@ -8,10 +8,10 @@ use Illuminate\Http\Request;
 class EventController extends Controller
 {
 
-    public function index()
+    public function adminEvents()
     {
         $event = Event::where('status', 'disetujui')->latest()->get();
-        return view('admin.event.index', ['title' => 'Event', 'event' => $event]);
+        return view('admin.event.events', ['title' => 'Event', 'event' => $event]);
     }
 
     public function indexUser()
@@ -21,7 +21,7 @@ class EventController extends Controller
     }
 
 
-    public function detailEvent($id)
+    public function adminDetailEvent($id)
     {
         $event = Event::findOrFail($id);
         return view('admin.event.detailEvent', ['title' => 'Detail Event', 'event' => $event]);
@@ -51,12 +51,12 @@ class EventController extends Controller
         return redirect()->route('user.event')->with('success', 'Anda telah berhasil mengikuti kegiatan.');
     }
 
-    public function addEvent()
+    public function adminAddEvent()
     {
         return view('admin.event.addEvent', ['title' => 'Add Event']);
     }
 
-    public function saveEvent(Request $request)
+    public function adminSaveEvent(Request $request)
     {
         $request->validate([
             'status' => 'nullable|string|max:255',
@@ -95,13 +95,13 @@ class EventController extends Controller
         return redirect()->route('admin.dashboard')->with('success', 'Event berhasil ditambahkan');
     }
 
-    public function editEvent($id)
+    public function AdminEditEvent($id)
     {
         $event = Event::findOrFail($id);
         return view('admin.event.editEvent', ['title' => 'Edit Event', 'event' => $event]);
     }
 
-    public function updateEvent(Request $request, $id)
+    public function AdminUpdateEvent(Request $request, $id)
     {
 
         $event = Event::findOrFail($id);
@@ -146,7 +146,7 @@ class EventController extends Controller
         return redirect()->route('admin.dashboard')->with('success', 'Event berhasil ditambahkan');
     }
 
-    public function deleteEvent($id)
+    public function adminDeleteEvent($id)
     {
         $event = Event::findOrFail($id);
 

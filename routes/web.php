@@ -42,16 +42,16 @@ Route::post('user/event/join/{id}', [EventController::class, 'joinEvent'])->name
 // Admin
 Route::get('admin/dashboard', [HomeController::class, 'index'])->middleware(['auth', 'admin'])->name('admin.dashboard');
 // Event
-Route::get('admin/event/index', [EventController::class, 'index'])->name('event.index');
-Route::get('admin/event/detailEvent/{id}', [EventController::class, 'detailEvent'])->name('event.detail');
+Route::get('admin/event/events', [EventController::class, 'adminEvents'])->name('admin.events');
+Route::get('admin/event/detailEvent/{id}', [EventController::class, 'adminDetailEvent'])->name('admin.event.detail');
 // Add
-Route::get('admin/event/addEvent', [EventController::class, 'addEvent'])->name('event.add');
-Route::post('admin/saveEvent', [EventController::class, 'saveEvent'])->name('event.save');
+Route::get('admin/event/addEvent', [EventController::class, 'adminAddEvent'])->name('admin.event.add');
+Route::post('admin/saveEvent', [EventController::class, 'adminSaveEvent'])->name('admin.event.save');
 // Edit
-Route::get('admin/event/editEvent/{id}', [EventController::class, 'editEvent'])->name('event.edit');
-Route::put('admin/event/updateEvent/{id}', [EventController::class, 'updateEvent'])->name('event.update');
+Route::get('admin/event/editEvent/{id}', [EventController::class, 'adminEditEvent'])->name('admin.event.edit');
+Route::put('admin/event/updateEvent/{id}', [EventController::class, 'adminUpdateEvent'])->name('admin.event.update');
 // Delete
-Route::delete('admin/event/deleteEvent/{id}', [EventController::class, 'deleteEvent'])->name('event.delete');
+Route::delete('admin/event/deleteEvent/{id}', [EventController::class, 'adminDeleteEvent'])->name('admin.event.delete');
 
 // Aduan
 Route::get('admin/aduan/index', [AduanController::class, 'index'])->name('aduan.index');

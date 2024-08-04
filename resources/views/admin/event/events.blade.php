@@ -30,7 +30,7 @@
                                     <p class=" font-normal text-gray-700 dark:text-gray-400">
                                         {{ $data->deskripsi = Str::limit($data->deskripsi, 90) }}
                                     </p>
-                                    <a href="detailEvent/{{ $data->id }}"
+                                    <a href="{{ route('admin.event.detail', $data->id) }}"
                                         class="font-normal text-green-500 dark:text-gray-400 hover:underline">
                                         Lihat detail
                                     </a>
@@ -45,7 +45,7 @@
 
         </div>
         <div class="fixed bottom-10 right-10">
-            <a href="{{ route('event.add') }}"
+            <a href="{{ route('admin.event.add') }}"
                 class="flex bg-blue-500 justify-center items-center hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
                 <h1 class="pr-2">Create Event</h1>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"

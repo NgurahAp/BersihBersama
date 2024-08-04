@@ -1,7 +1,7 @@
 <aside class="bg-gray-800 text-white w-64 p-4">
     <nav>
         <ul>
-            <li class="mb-4"><a href="{{ route('event.index') }}" class="hover:underline">Event</a></li>
+            <li class="mb-4"><a href="{{ route('admin.events') }}" class="hover:underline">Event</a></li>
             <li class="mb-4"><a href="{{ route('aduan.index') }}" class="hover:underline">aduan</a></li>
             <li class="mb-4"><a href="{{ route('blog.index') }}" class="hover:underline">Blog</a></li>
             <li class="mb-4">
