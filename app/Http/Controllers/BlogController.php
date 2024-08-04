@@ -9,10 +9,10 @@ use Illuminate\Support\Facades\Auth;
 class BlogController extends Controller
 {
 
-    public function index()
+    public function adminBlogs()
     {
         $blog = Blog::all();
-        return view('admin.blog.index', ['title' => 'Event', 'blog' => $blog]);
+        return view('admin.blog.blogs', ['title' => 'Event', 'blog' => $blog]);
     }
 
     public function indexUser()
@@ -21,7 +21,7 @@ class BlogController extends Controller
         return view('user.blog', ['title' => 'blog', 'blog' => $blog]);
     }
 
-    public function detailBlog($id)
+    public function AdminDetailBlog($id)
     {
         $blog = Blog::findOrFail($id);
         return view('admin.blog.detailBlog', ['title' => 'Detail Blog', 'blog' => $blog]);
@@ -33,12 +33,12 @@ class BlogController extends Controller
         return view('user.detailBlogUser', ['title' => 'Detail Blog', 'blog' => $blog]);
     }
 
-    public function addBlog()
+    public function adminAddBlog()
     {
         return view('admin.blog.addBlog', ['title' => 'Add Blog']);
     }
 
-    public function saveBlog(Request $request)
+    public function adminSaveBlog(Request $request)
     {
         $request->validate([
             'judul' => 'required|string|max:255',
@@ -63,13 +63,13 @@ class BlogController extends Controller
         return redirect()->route('admin.dashboard')->with('success', 'Event berhasil ditambahkan');
     }
 
-    public function editBlog($id)
+    public function adminEditBlog($id)
     {
         $blog = Blog::findOrFail($id);
         return view('admin.blog.editBlog', ['title' => 'Edit blog', 'blog' => $blog]);
     }
 
-    public function updateBlog(Request $request, $id)
+    public function adminUpdateBlog(Request $request, $id)
     {
 
         $blog = Blog::findOrFail($id);
@@ -100,7 +100,7 @@ class BlogController extends Controller
         return redirect()->route('admin.dashboard')->with('success', 'Event berhasil ditambahkan');
     }
 
-    public function deleteBlog($id)
+    public function adminDeleteBlog($id)
     {
         $blog = Blog::findOrFail($id);
 

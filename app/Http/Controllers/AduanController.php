@@ -7,25 +7,25 @@ use Illuminate\Http\Request;
 
 class AduanController extends Controller
 {
-    public function index()
+    public function adminAduans()
     {
         $aduan = Event::where('status', 'pending')->latest()->get();
-        return view('admin.aduan.index', ['title' => 'Event', 'aduan' => $aduan]);
+        return view('admin.aduan.aduans', ['title' => 'Event', 'aduan' => $aduan]);
     }
 
-    public function detailAduan($id)
+    public function adminDetailAduan($id)
     {
         $aduan = Event::findOrFail($id);
         return view('admin.aduan.detailAduan', ['title' => 'Detail Aduan', 'aduan' => $aduan]);
     }
 
-    public function editAduan($id)
+    public function adminEditAduan($id)
     {
         $aduan = Event::findOrFail($id);
         return view('admin.aduan.editAduan', ['title' => 'Edit Aduan', 'aduan' => $aduan]);
     }
 
-    public function updateAduan(Request $request, $id)
+    public function adminUpdateAduan(Request $request, $id)
     {
 
         $aduan = Event::findOrFail($id);
@@ -70,7 +70,7 @@ class AduanController extends Controller
         return redirect()->route('admin.dashboard')->with('success', 'Event berhasil ditambahkan');
     }
 
-    public function deleteAduan($id)
+    public function adminDeleteAduan($id)
     {
         $aduan = Event::findOrFail($id);
 

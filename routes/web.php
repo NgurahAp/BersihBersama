@@ -54,22 +54,22 @@ Route::put('admin/event/updateEvent/{id}', [EventController::class, 'adminUpdate
 Route::delete('admin/event/deleteEvent/{id}', [EventController::class, 'adminDeleteEvent'])->name('admin.event.delete');
 
 // Aduan
-Route::get('admin/aduan/index', [AduanController::class, 'index'])->name('aduan.index');
-Route::get('admin/aduan/detailAduan/{id}', [AduanController::class, 'detailAduan'])->name('aduan.detail');
+Route::get('admin/aduan/aduans', [AduanController::class, 'adminAduans'])->name('admin.aduans');
+Route::get('admin/aduan/detailAduan/{id}', [AduanController::class, 'adminDetailAduan'])->name('admin.aduan.detail');
 // Edit
-Route::get('admin/aduan/editAduan/{id}', [AduanController::class, 'editAduan'])->name('aduan.edit');
-Route::put('admin/aduan/updateAduan/{id}', [AduanController::class, 'updateAduan'])->name('aduan.update');
+Route::get('admin/aduan/editAduan/{id}', [AduanController::class, 'adminEditAduan'])->name('admin.aduan.edit');
+Route::put('admin/aduan/updateAduan/{id}', [AduanController::class, 'adminUpdateAduan'])->name('admin.aduan.update');
 // Delete
-Route::delete('admin/aduan/deleteAduan/{id}', [AduanController::class, 'deleteAduan'])->name('aduan.delete');
+Route::delete('admin/aduan/deleteAduan/{id}', [AduanController::class, 'adminDeleteAduan'])->name('admin.aduan.delete');
 
 // Blog
-Route::get('admin/blog/index', [BlogController::class, 'index'])->name('blog.index');
-Route::get('admin/blog/detailBlog/{id}', [BlogController::class, 'detailBlog'])->name('blog.detail');
+Route::get('admin/blog/blogs', [BlogController::class, 'adminBlogs'])->name('admin.blogs');
+Route::get('admin/blog/detailBlog/{id}', [BlogController::class, 'adminDetailBlog'])->name('admin.blog.detail');
 // Add
-Route::get('admin/blog/addBlog', [BlogController::class, 'addBlog'])->name('blog.add');
-Route::post('admin/saveBlog', [BlogController::class, 'saveBlog'])->name('blog.save');
+Route::get('admin/blog/addBlog', [BlogController::class, 'adminAddBlog'])->name('admin.blog.add');
+Route::post('admin/saveBlog', [BlogController::class, 'adminSaveBlog'])->name('admin.blog.save');
 // Edit
-Route::get('admin/blog/editBlog/{id}', [BlogController::class, 'editBlog'])->name('blog.edit');
-Route::put('admin/blog/updateBlog/{id}', [BlogController::class, 'updateBlog'])->name('blog.update');
+Route::get('admin/blog/editBlog/{id}', [BlogController::class, 'adminEditBlog'])->name('admin.blog.edit');
+Route::put('admin/blog/updateBlog/{id}', [BlogController::class, 'adminUpdateBlog'])->name('admin.blog.update');
 // Delete
-Route::delete('admin/blog/deleteBlog/{id}', [BlogController::class, 'deleteBlog'])->name('blog.delete');
+Route::delete('admin/blog/deleteBlog/{id}', [BlogController::class, 'adminDeleteBlog'])->name('admin.blog.delete');

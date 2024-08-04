@@ -14,7 +14,7 @@
                     </ul>
                 </div>
             @endif
-            <form action="{{ route('blog.update', $blog->id) }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('admin.blog.update', $blog->id) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
                 <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">

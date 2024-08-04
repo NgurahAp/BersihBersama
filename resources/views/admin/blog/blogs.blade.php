@@ -35,12 +35,18 @@
                                 </p>
                                 <div class="flex justify-between">
                                     <div class="flex items-center">
-                                        <img src="https://via.placeholder.com/40" alt="Profile Image"
-                                            class="w-10 h-10 rounded-full mr-2">
-                                        <h1 class="text-lg font-medium text-gray-900 dark:text-white">
-                                            {{ $data->author->name }}</h1>
-                                    </div>
-                                    <a href="detailBlog/{{ $data->id }}"
+                                    @if ($data->author->profile_picture)
+                                        <img src="{{ asset('storage/' . $data->author->profile_picture) }}"
+                                            class="w-12 h-12 rounded-full mt-2" />
+                                    @else
+                                        <img src="{{ asset('images/profil.png') }}"
+                                            class="w-12 h-12 rounded-full mt-2" />
+                                    @endif
+                                    <h1 class="text-lg font-medium text-gray-900 dark:text-white ml-3">
+                                        {{ $data->author->name }}
+                                    </h1>
+                                </div>
+                                    <a href="{{ route('admin.blog.detail', $data->id) }}"
                                         class="font-normal text-green-500 dark:text-gray-400 hover:underline">
                                         Selengkapnya ->
                                     </a>
@@ -56,7 +62,7 @@
 
         </div>
         <div class="fixed bottom-10 right-10">
-            <a href="{{ route('blog.add') }}"
+            <a href="{{ route('admin.blog.add') }}"
                 class="flex bg-blue-500 justify-center items-center hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
                 <h1 class="pr-2">Create Blog</h1>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -64,7 +70,6 @@
                     <path stroke-linecap="round" stroke-linejoin="round"
                         d="M12 9v6m3-3H9m12 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                 </svg>
-
             </a>
         </div>
     </section>
